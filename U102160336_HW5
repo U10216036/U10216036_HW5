@@ -6,7 +6,11 @@ import javax.swing.*;
 
 class Calculator extends JFrame{
 
-		boolean[] function = new boolean[4];  
+		//declare some booleans for our functions 
+
+		boolean[] function = new boolean[4]; 
+		
+		//some temporary doubles later for our calculations 
 
 		double[] temporary = {0, 0};  
 
