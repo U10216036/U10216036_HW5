@@ -149,6 +149,40 @@ class Calculator extends JFrame{
 		
 		equal.setBounds(230, 260, 80, 50);
 		
+		one.addActionListener(new Button_ActionListener());
+		
+		two.addActionListener(new Button_ActionListener());
+		
+		three.addActionListener(new Button_ActionListener());
+		
+		four.addActionListener(new Button_ActionListener());
+		
+		five.addActionListener(new Button_ActionListener());
+		
+		six.addActionListener(new Button_ActionListener());
+		
+		seven.addActionListener(new Button_ActionListener());
+		
+		eight.addActionListener(new Button_ActionListener());
+		
+		nine.addActionListener(new Button_ActionListener());
+		
+		zero.addActionListener(new Button_ActionListener());
+		
+		dot.addActionListener(new Button_ActionListener());
+		
+		plus.addActionListener(new Button_ActionListener());
+		
+		minus.addActionListener(new Button_ActionListener());
+		
+		multiply.addActionListener(new Button_ActionListener());
+		
+		divide.addActionListener(new Button_ActionListener());
+		
+		equal.addActionListener(new Button_ActionListener());
+		
+		clear.addActionListener(new Button_ActionListener());
+		
 		contentPane.add(display);
 		
 		contentPane.add(one);
@@ -189,7 +223,196 @@ class Calculator extends JFrame{
 		
 
 	} // Constructor	
+	class Button_ActionListener implements ActionListener {
+		
+		public void clear() {  
+
+			try {  
+
+				display.setText("");  
+
+				for(int i = 0; i < 4; i++)  
+
+					function[i] = false;  
+
+				for(int i = 0; i < 2; i++)  
+
+					temporary[i] = 0;  
+
+			} catch(NullPointerException e) {    
+
+			}  
+
+     }  
+
+		public void getResult() {  
+
+         double result = 0;  
+
+         temporary[1] = Double.parseDouble(display.getText());  
+
+         String temp0 = Double.toString(temporary[0]);  
+
+         String temp1 = Double.toString(temporary[1]);  
+
+         try {  
+
+             if(temp0.contains("-")) {  
+
+                 String[] temp00 = temp0.split("-", 2);  
+
+                 temporary[0] = (Double.parseDouble(temp00[1]) * -1);  
+
+             }  
+
+             if(temp1.contains("-")) {  
+
+                 String[] temp11 = temp1.split("-", 2);  
+
+                 temporary[1] = (Double.parseDouble(temp11[1]) * -1);  
+
+             }  
+
+         } catch(ArrayIndexOutOfBoundsException e) {  
+
+         }  
+
+         try {  
+
+             if(function[2] == true)  
+
+                 result = temporary[0] * temporary[1];  
+
+             else if(function[3] == true)  
+
+                 result = temporary[0] / temporary[1];  
+
+             else if(function[0] == true)  
+
+                 result = temporary[0] + temporary[1];  
+
+             else if(function[1] == true)  
+
+                 result = temporary[0] - temporary[1];  
+
+            display.setText(Double.toString(result));  
+
+            for(int i = 0; i < 4; i++)  
+
+                 function[i] = false;  
+
+         } catch(NumberFormatException e) {  
+
+         }  
+
+		}  
+			
+		public void actionPerformed(ActionEvent e) {
+		
+			if(e.getSource() == one)  
+
+				display.append("1");  
+
+			if(e.getSource() == two)  
+
+				display.append("2");  
+
+			if(e.getSource() == three)  
+
+				display.append("3");    
+
+			if(e.getSource() == four)  
+
+				display.append("4");  
+
+			if(e.getSource() == five)  
+
+				display.append("5");  
+
+			if(e.getSource() == six)  
+
+				display.append("6");    
+
+			if(e.getSource() == seven)  
+
+				display.append("7");  
+
+			if(e.getSource() == eight)  
+
+				display.append("8");  
+
+			if(e.getSource() == nine)  
+
+				display.append("9"); 
+
+			if(e.getSource() == zero)  
+
+				display.append("0");  
+
+			if(e.getSource() == dot)  
+
+				display.append(".");
+			 
+			if(e.getSource() == plus) {  
+
+             //add function[0]  
+
+				temporary[0] = Double.parseDouble(display.getText());  
+
+				function[0] = true;  
+
+				display.setText("");  
+		
+			}
+		 
+			if(e.getSource() == minus) {  
+
+			//subtract function[1]  
+
+				temporary[0] = Double.parseDouble(display.getText());  
+
+				function[1] = true;  
+
+				display.setText("");  
+
+			}		 
+
+			if(e.getSource() == divide) {  
+
+             //divide function[3]  
+
+				temporary[0] = Double.parseDouble(display.getText());  
+
+				function[3] = true;  
+
+				display.setText("");  
+
+			}
+
+			if(e.getSource() == multiply) {  
+
+				//multiply function[2]  
+
+				temporary[0] = Double.parseDouble(display.getText());  
+
+				function[2] = true;  
+
+				display.setText("");  
+
+			}
+
+			if(e.getSource() == clear)  
+
+				clear();  
+
+			if(e.getSource() == equal)  
+
+				getResult();
+		
 	
+	}
+	
+	} // Button_ActionListener	
 
 
 }
