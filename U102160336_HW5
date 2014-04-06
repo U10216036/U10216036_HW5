@@ -1,0 +1,191 @@
+import java.awt.*;
+
+import java.awt.event.*;
+
+import javax.swing.*;
+
+class Calculator extends JFrame{
+
+		boolean[] function = new boolean[4];  
+
+		double[] temporary = {0, 0};  
+
+		private JTextArea display;
+		
+		private JButton one;
+		
+		private JButton two;
+		
+		private JButton three;
+		
+		private JButton four;
+		
+		private JButton five;
+		
+		private JButton six;
+		
+		private JButton seven;
+		
+		private JButton eight;
+		
+		private JButton nine;
+		
+		private JButton zero;
+		
+		private JButton dot;
+		
+		private JButton plus;
+		
+		private JButton minus;
+		
+		private JButton multiply;
+		
+		private JButton divide;
+		
+		private JButton clear;
+		
+		private JButton equal;
+		
+		
+
+	public static void main(String args[]) {
+
+		Calculator c = new Calculator();
+
+		c.setVisible(true);//Let the frame be visible
+
+	} // main
+
+	public Calculator() {
+	
+		//use getContentPane()method to get ContentPane of JFrame  return a Container object
+		Container contentPane = getContentPane();
+				
+		setTitle("Calculator");
+
+		setSize(350, 370);
+
+		setLocation(150, 250);
+
+		contentPane.setLayout(null);
+		
+		display = new JTextArea("");
+		
+		one = new JButton ("1");
+		
+		two = new JButton ("2");
+		
+		three = new JButton ("3");
+		
+		four = new JButton ("4");
+		
+		five = new JButton ("5");
+		
+		six = new JButton ("6");
+
+		seven = new JButton ("7");
+
+		eight = new JButton ("8");
+
+		nine = new JButton ("9");
+
+		zero = new JButton ("0");
+		
+		dot = new JButton (".");
+		
+		plus = new JButton ("+");
+		
+		minus = new JButton ("-");
+		
+		multiply = new JButton ("*");
+		
+		divide = new JButton ("/");
+		
+		clear = new JButton ("C");
+		
+		equal = new JButton ("=");
+		
+		display.setEditable(false); 
+		
+		//set x,y,long,width
+		
+		display.setBounds(20, 20, 300,70);
+		
+		one.setBounds(20, 110, 70, 50);
+		
+		two.setBounds(90, 110, 70, 50);
+		
+		three.setBounds(160, 110, 70, 50);
+		
+		four.setBounds(20, 160, 70, 50);		
+
+		five.setBounds(90, 160, 70, 50);
+		
+		six.setBounds(160, 160, 70, 50);
+
+		seven.setBounds(20, 210, 70, 50);
+
+		eight.setBounds(90, 210, 70, 50);
+
+		nine.setBounds(160, 210, 70, 50);
+		
+		zero.setBounds(20, 260, 140, 50);
+		
+		dot.setBounds(160, 260, 70, 50);
+		
+		plus.setBounds(230, 110, 80, 30);
+		
+		minus.setBounds(230, 140, 80, 30);
+		
+		multiply.setBounds(230, 170, 80, 30);
+		
+		divide.setBounds(230, 200, 80, 30);
+		
+		clear.setBounds(230, 230, 80, 30);
+		
+		equal.setBounds(230, 260, 80, 50);
+		
+		contentPane.add(display);
+		
+		contentPane.add(one);
+		
+		contentPane.add(two);
+		
+		contentPane.add(three);
+		
+		contentPane.add(four);
+		
+		contentPane.add(five);
+
+		contentPane.add(six);
+		
+		contentPane.add(seven);
+
+		contentPane.add(eight);
+
+		contentPane.add(nine);
+
+		contentPane.add(zero);
+		
+		contentPane.add(dot);
+		
+		contentPane.add(plus);
+		
+		contentPane.add(minus);
+		
+		contentPane.add(multiply);
+		
+		contentPane.add(divide);
+		
+		contentPane.add(clear);
+		
+		contentPane.add(equal);
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+
+	} // Constructor	
+	
+
+
+}
