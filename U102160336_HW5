@@ -255,27 +255,7 @@ class Calculator extends JFrame{
 
          String temp1 = Double.toString(temporary[1]);  
 
-         try {  
-
-             if(temp0.contains("-")) {  
-
-                 String[] temp00 = temp0.split("-", 2);  
-
-                 temporary[0] = (Double.parseDouble(temp00[1]) * -1);  
-
-             }  
-
-             if(temp1.contains("-")) {  
-
-                 String[] temp11 = temp1.split("-", 2);  
-
-                 temporary[1] = (Double.parseDouble(temp11[1]) * -1);  
-
-             }  
-
-         } catch(ArrayIndexOutOfBoundsException e) {  
-
-         }  
+ 
 
          try {  
 
